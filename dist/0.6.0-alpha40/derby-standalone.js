@@ -2896,7 +2896,7 @@ function setAttributes(context, model) {
       attribute.expression.pathSegments(context)
     );
     if (segments) {
-      model.root.ref(model._at + '.' + key, segments.join('.'));
+      model.root.ref(model._at + '.' + key, segments.join('.'), {updateIndices: true});
     } else {
       model.set(key, attribute);
     }
